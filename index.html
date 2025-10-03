@@ -12,11 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
+<header aria-label="Primary"></header>
   <h1 class="boxed-heading">Koningin Beatrixpark - Welcome
   <img src="img/large image beatrix park.png" alt="Beatrixpark image" title="Beatrixpark logo" class="hero-image" /> </h1>
 
-  <nav aria-label="Primary">
+  <nav aria-label="Primary" class="site-nav">
+      <a href="index.html" class="logo-link">
+    <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo" >
+  </a>
     <ul>
       <li><a href="index.html" aria-current="page">Home</a></li>
       <li><a href="nature.html">Nature</a></li>
@@ -123,31 +126,34 @@
     <p>This website is a project for Web Markup 2025, a course at Inholland  University of Applied Sciences. It uses semantic HTML and responsive CSS to create a user-friendly experience for expat families visiting Beatrixpark in Almere.</p>
 
     <a class="btn ghost" href="about-us.html">Learn more</a>
-
-
-
-    <p class="cta-wrap">
-      <a class="btn" href="visit.html">Plan your first loop</a>
-      <a class="btn ghost" href="playgrounds-amenities.html">Find a playground</a>
-    </p>
  
   </section>
 
 </main>
 
-<footer aria-label="Footer">
-  <nav aria-label="Footer navigation">
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="nature.html">Nature</a></li>
-      <li><a href="visit.html">Visit (Routes)</a></li>
-      <li><a href="playgrounds-amenities.html">Playgrounds &amp; Amenities</a></li>
-      <li><a href="about-us.html">About us</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <p><small>&copy; 2025 Beatrixpark Project · Designed for expat families in Almere.</small></p>
+<footer role="contentinfo" class="site-footer">
+  <section class="footer-left">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo">
+    </a>
+  </section>
+
+  <section class="footer-right">
+    <p><small>&copy; 2025 Beatrixpark Project · Designed for expat families in Almere.</small></p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="playgrounds-amenities.html">Playgrounds & Amenities</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="tagline">🌿 Thank you for visiting Beatrixpark — every season brings a new reason to smile.</p>
+  </section>
 </footer>
+
 
 </body>
 </html>

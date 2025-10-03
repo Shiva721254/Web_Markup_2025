@@ -1,215 +1,139 @@
 /* ============================
-   Default CSS – Beatrix Park
+   Beatrix Park — Base CSS
    ============================ */
 
-/* Import a clean readable font */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* Root variables (easy to theme) */
-:root {
-  --primary:#2E7D32;        /* Forest Green */
-  --secondary:#A5D6A7;      /* Leaf Green */
-  --background:#F9FBE7;     /* Fresh Light */
-  --text:#222233;           /* Dark Blue-Gray */
-  --muted:#555566;          /* Slate Gray */
-  --accent:#FFB300;         /* Amber */
-  --radius: 10px;
-  --shadow: 0 4px 12px rgba(0,0,0,.08);
+/* Design tokens */
+:root{
+  --primary:#2E7D32;      /* Forest Green */
+  --secondary:#A5D6A7;    /* Leaf Green */
+  --background:#F9FBE7;   /* Fresh Light */
+  --text:#222233;         /* Dark Blue-Gray */
+  --muted:#555566;        /* Slate Gray */
+  --accent:#FFB300;       /* Amber */
+  --radius:10px;
+  --shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 /* Reset & base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+*{box-sizing:border-box; margin:0; padding:0}
+html{font-size:16px; scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--background);
+  color:var(--text);
+  line-height:1.6;
 }
 
 /* Typography */
-h1,h2,h3,h4,h5,h6 { line-height: 1.25; margin-bottom: .5em; }
-p { margin-bottom: 1em; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
+h1,h2,h3,h4,h5,h6{line-height:1.25; margin-bottom:.5em}
+p{margin-bottom:1em}
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
 
 /* Layout */
-main { width: 100%; max-width: none; margin: 0; padding: 1rem; }
-main.layout { max-width: 900px; margin: 0 auto; padding: 1rem; }
+main{width:100%; margin:0; padding:1rem}
+main.layout{max-width:900px; margin:0 auto; padding:1rem}
 
-/* Sections / cards */
-section, article, aside {
-  background: #fff;
-  border: 1px solid #e6eaee;
-  border-radius: var(--radius);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow);
+/* Cards & sections */
+section,article,aside{
+  background:#fff;
+  border:1px solid #e6eaee;
+  border-radius:var(--radius);
+  padding:1rem;
+  margin-bottom:1rem;
+  box-shadow:var(--shadow);
 }
 
-/* Lists */
-ul, ol { margin-left: 1.25rem; margin-bottom: 1rem; }
-
-/* Tables */
-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-th, td { padding: .75rem; border: 1px solid #ccd; text-align: left; }
-tbody tr:nth-child(even) { background: #CFF; }
-tbody tr:nth-child(odd) { background: #FFF; }
+/* Lists, tables */
+ul,ol{margin-left:1.25rem; margin-bottom:1rem}
+table{width:100%; border-collapse:collapse; margin:1rem 0}
+th,td{padding:.75rem; border:1px solid #ccd; text-align:left}
+tbody tr:nth-child(even){background:#CFF}
+tbody tr:nth-child(odd){background:#FFF}
 
 /* Forms */
-form { display: grid; gap: .75rem; max-width: 600px; }
-label { font-weight: 600; }
-input, textarea, select {
-  padding: .6rem .7rem;
-  border: 1px solid #ccd;
-  border-radius: .4rem;
-  width: 100%;
+form{display:grid; gap:.75rem; max-width:600px}
+label{font-weight:600}
+input,textarea,select{
+  width:100%; padding:.6rem .7rem; border:1px solid #ccd; border-radius:.4rem
 }
-input[type="submit"], button {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: .5rem;
-  padding: .6rem 1rem;
-  cursor: pointer;
-  font-weight: 600;
+input[type="submit"],button{
+  background:var(--primary); color:#fff; border:0; border-radius:.5rem;
+  padding:.6rem 1rem; cursor:pointer; font-weight:600
 }
-input[type="submit"]:hover, button:hover {
-  background: var(--accent);
+input[type="submit"]:hover,button:hover{background:var(--accent)}
+
+/* Buttons */
+.btn{
+  display:inline-block; padding:.6rem 1rem; border-radius:.5rem;
+  border:2px solid var(--primary); background:var(--primary);
+  color:#fff; text-decoration:none; font-weight:600
 }
+.btn:hover{background:var(--accent); border-color:var(--accent)}
+.btn.ghost{background:transparent; color:var(--primary)}
 
-/* Buttons (link-style) */
-.btn {
-  display:inline-block;
-  padding:.6rem 1rem;
-  border-radius:.5rem;
-  border:2px solid var(--primary);
-  background: var(--primary);
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
+/* Media */
+img{max-width:100%; height:auto; border-radius:var(--radius)}
+
+/* Utility flex layouts */
+.flex-container{display:flex; gap:1rem; flex-wrap:wrap}
+.flex-container>article{flex:1 1 300px}
+
+/* Half-split card (image/text 50/50) */
+.card.half-split{display:flex; gap:1rem; flex-wrap:wrap; overflow:hidden; padding:0}
+.card.half-split>*{flex:1 1 300px; padding:1rem}
+
+/* =============== HEADER NAV (scoped) =============== */
+.site-nav{
+  position:sticky; top:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--primary); padding:.5rem 1rem; border-bottom:2px solid var(--accent)
 }
-.btn:hover { background: var(--accent); border-color: var(--accent); }
-.btn.ghost { background: transparent; color: var(--primary); }
-
-/* Images */
-img { max-width: 100%; height: auto; border-radius: var(--radius); }
-
-
-
-/* Responsive (mobile vs desktop) */
-/*@media (min-width: 769px) {
-  main { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; }
-  aside { position: sticky; top: 6rem; }
+.site-nav .logo{max-height:45px; width:auto; display:block}
+.site-nav ul{list-style:none; display:flex; gap:1rem; margin:0; padding:0}
+.site-nav ul li a{
+  padding:.5rem 1rem; border-radius:var(--radius);
+  color:#fff; font-weight:600; text-decoration:none
 }
-@media (max-width: 768px) {
-  main { .card.half-split { flex-direction: column; }  }
-}  */
+.site-nav ul li a:hover,
+.site-nav ul li a[aria-current="page"]{background:var(--accent); color:#111}
 
-
-
-
-
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  nav ul li a {
-    padding: .5rem 1rem;
-    border-radius: var(--radius);
-    background: var(--primary);
-    color: #fff;
-    font-weight: 600;
-  }
-  .boxed-heading 
-{
-    border: none;
-    display: inline-block;
-    padding:  1rem;
-    border-radius: var(--radius);
-    background: var(--secondary);
-    color: var(--text);
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    text-align: center;
-
-  }
-
-  .logo {
-    max-width: 150px;
-    height: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
- .flex-container {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .flex-container > article {
-    flex: 1 1 300px;
-  }
-  
-  .card.half-split {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    overflow: hidden;
-    padding: 0;
-  }
-  .card.half-split > * {
-    flex: 1 1 300px;
-    padding: 1rem;
-  }
-  
-  footer {
-  width: 100vw;                  /* cover full viewport width */
-  margin: 0;
-  padding: 1.5rem 1rem;
-  background: var(--primary);    /* forest green */
-  color: #fff;
-  text-align: center;
+/* =============== FOOTER (logo left, links right) =============== */
+.site-footer{
+  width:100%; margin:0; padding:1.5rem 2rem;
+  background:var(--primary); color:#fff;
+  display:flex; align-items:flex-start; justify-content:space-between;
+  gap:2rem; text-align:left
 }
+/* remove card look from footer groupings */
+.site-footer section{background:transparent; border:0; padding:0; margin:0; box-shadow:none}
+.footer-left .logo{max-height:60px; width:auto; display:block}
+.footer-right{margin-left:auto; display:flex; flex-direction:column; align-items:flex-end; gap:.5rem}
+.site-footer nav{position:static; background:transparent; padding:0; border:0}
+.site-footer nav ul{list-style:none; display:flex; flex-wrap:wrap; gap:1rem; margin:.25rem 0 0; padding:0; justify-content:flex-end}
+.site-footer nav a{background:none; color:#fff; padding:0; font-weight:600; border-radius:0; text-decoration:none}
+.site-footer nav a:hover{text-decoration:underline}
+.site-footer .tagline{color:#f9fbe7; font-style:italic; font-size:.9rem}
 
-footer nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin: 1rem 0;
+/* =============== ACCESSORIES =============== */
+.boxed-heading{
+  display:inline-block; padding:1rem; border-radius:var(--radius);
+  background:var(--secondary); color:var(--text);
+  font-size:1.5rem; font-weight:800; margin-bottom:1rem; text-align:center
 }
+.logo{max-width:150px; height:auto; margin:1rem 0}
 
-footer nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
+/* =============== ACTIVE LINK (generic helper) =============== */
+nav a[aria-current="page"]{background:var(--accent); color:#111; font-weight:700}
+nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
 
-footer nav ul li a:hover {
-  text-decoration: underline;
-}
-
-footer .tagline {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #f9fbe7; /* softer tone */
-}
-
-nav a[aria-current="page"] {
-  background: var(--accent); /* Amber */
-  color: #111;
-  font-weight: 700;
-}
-nav a[aria-current="page"]:hover {
-  background: var(--primary); /* Forest Green */
-  color: #fff;
+/* =============== RESPONSIVE =============== */
+@media (max-width:768px){
+  .site-footer{flex-direction:column; align-items:center; text-align:center}
+  .footer-right{align-items:center; margin-left:0}
+  .site-footer nav ul{justify-content:center}
+  .card.half-split{flex-direction:column}
 }
