@@ -313,7 +313,7 @@ nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
 
 .wide-figure {
   width: 100%;
-  height: 33vh; /* one-third of the viewport height */
+  height: 25vh; /* one-third of the viewport height */
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -606,4 +606,82 @@ mark {
   .tips-expats li {
     font-size: 0.95rem;
   }
+}
+
+/* ============================
+  playground and amenities edits
+   ============================ */
+   /* One-section, six-card grid */
+.six-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.six-cards > h3 {
+  grid-column: 1 / -1;        /* title spans full width */
+  margin: 0 0 .5rem;
+  text-align: center;
+  color: #2b4d2b;
+}
+
+/* Card styling (article acts as card) */
+.six-cards article {
+  box-sizing: border-box;
+  background: #f9faf9;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: .6rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.six-cards article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.six-cards h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #2b4d2b;
+  text-align: center;
+}
+
+/* Picture block */
+.card-media {
+  margin: 0;
+  border-radius: .75rem;
+  overflow: hidden;
+  background: #e9ece9;
+  aspect-ratio: 4 / 3;       /* consistent card image height */
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Description */
+.six-cards .lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .six-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .six-cards { grid-template-columns: 1fr; }
 }
