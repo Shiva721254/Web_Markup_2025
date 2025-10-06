@@ -103,10 +103,19 @@ img{max-width:100%; height:auto; border-radius:var(--radius)}
 
 /* =============== FOOTER (logo left, links right) =============== */
 .site-footer{
-  width:100%; margin:0; padding:1.5rem 2rem;
-  background:var(--primary); color:#fff;
-  display:flex; align-items:flex-start; justify-content:space-between;
-  gap:2rem; text-align:left
+  display: flex;
+  flex-direction: row;
+  width:100%; 
+  margin:0;
+  padding:1.2rem 0;
+  background:var(--primary); 
+  color:#fff;
+  display:flex; 
+  align-items:flex-start; 
+  justify-content:center;
+  gap:2rem; 
+  text-align:center;
+
 }
 /* remove card look from footer groupings */
 .site-footer section{background:transparent; border:0; padding:0; margin:0; box-shadow:none}
@@ -256,7 +265,7 @@ nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
   position: relative;
   padding-left: 1.8rem;
   margin-bottom: .5rem;
-  list -style: none;          /* remove default bullets */
+  list-style: none;          /* remove default bullets */
 }
 
 /* Add icons using pseudo-elements */
@@ -299,5 +308,302 @@ nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
   }
   .two-cards > * {
     width: 100%;
+  }
+}
+
+.wide-figure {
+  width: 100%;
+  height: 33vh; /* one-third of the viewport height */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.wide-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps the image proportionate while filling the area */
+  display: block;
+}
+
+.wide-figure figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 0.5em;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+/* ============================
+   visit page edits
+   ============================ */
+
+.two-column-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* two equal columns */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3em auto;
+  padding: 2em;
+  border-radius: 20px;
+  background: #f8faf6;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  position: relative;
+}
+
+.two-column-text .lead {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* Dog watermark on the SECOND column only */
+.two-column-text > article:nth-of-type(2) {
+  position: relative; /* create stacking context for pseudo-element */
+  background: linear-gradient(135deg, #f8faf6, #eef5ec);
+}
+
+/* Watermark layer */
+.two-column-text > article:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/dog_bg1.png") bottom right / 40% no-repeat;
+  opacity: 0.5;          /* subtle watermark */
+  pointer-events: none;   /* purely decorative */
+  z-index: 0;
+}
+
+/* Keep text above the watermark */
+.two-column-text > article:nth-of-type(2) .lead {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: soft divider between columns */
+.two-column-text::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1.5px;
+  background: rgba(0,0,0,.1);
+}
+
+/* Responsive: stack columns */
+@media (max-width: 768px) {
+  .two-column-text {
+    grid-template-columns: 1fr;
+  }
+  .two-column-text::after { display: none; }
+  .two-column-text > article:nth-of-type(2)::before {
+    background-size: 40%;
+    background-position: center bottom;
+  }
+}
+.route-photo {
+  width:100% ;
+  margin: o;
+  position: relative;
+}
+.route-photo img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* keeps the image proportionate while filling the area */
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.route-photo figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: .5rem;
+  color: var(--muted);
+}
+.three-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.three-cards article {
+  flex: 1 1 calc(33.333% - 1rem);
+  background-color: #f9faf9;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.three-cards article * {
+  position: relative;
+  z-index: 1;
+}
+
+.three-cards article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* shared style for all watermark icons */
+.three-cards article::before {
+  content: "";
+  position: absolute;
+  font-size: 5rem;
+  opacity: 0.20;               /* soft, semi-transparent */
+  color: #2b4d2b;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;        /* allows clicks on content */
+}
+.three-cards h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  color: #2b4d2b;
+  text-align: center;
+}
+
+.three-cards > h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.three-cards .lead {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  text-align: justify;
+}
+
+/* individual icons for each card */
+.three-cards article:nth-of-type(1)::before {
+  content: "👣"; /* Family Walk */
+}
+
+.three-cards article:nth-of-type(2)::before {
+  content: "🚲"; /* Biking Route */
+}
+
+.three-cards article:nth-of-type(3)::before {
+  content: "🛹"; /* Skate Route */
+}
+
+/* Button styling */
+.route-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  background-color: #2b4d2b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.route-link:hover,
+.route-link:focus {
+  background-color: #3b6e3b;
+  transform: translateY(-2px);
+}
+
+.route-link:focus {
+  outline: 2px dashed #1a441a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .three-cards article {
+    flex: 1 1 100%;
+  }
+}
+
+mark {
+  background : none;  
+  font-weight : 600;
+  font-style  : italic;;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+  color: inherit;
+}
+
+/* === Expat Tips Section === */
+.tips-expats {
+  background: linear-gradient(180deg, #f7f9f7 0%, #ffffff 100%);
+  border: 1px solid #cfcfcf;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 1.5rem auto;
+}
+
+.tips-expats h3 {
+  text-align: center;
+  color: #2b4d2b;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.tips-expats ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tips-expats li {
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px dotted #c0c0c0;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tips-expats li:last-child {
+  border-bottom: none;
+}
+
+/* Make icons stand out slightly */
+.tips-expats li::first-letter {
+  font-size: 1.2rem;
+}
+
+/* Subtle hover for interaction */
+.tips-expats li:hover {
+  background-color: #f1f7f1;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .tips-expats {
+    padding: 1rem;
+  }
+  .tips-expats li {
+    font-size: 0.95rem;
   }
 }
