@@ -685,3 +685,97 @@ mark {
 @media (max-width: 600px) {
   .six-cards { grid-template-columns: 1fr; }
 }
+
+/* ============================
+   about us page edits
+   ============================ */
+  /* --- About Us cards (grid, not flex) --- */
+.about-card{
+  display:grid;
+  grid-template-columns: 30% 70%;
+  align-items: stretch;
+  gap: 0;
+  margin: 2rem 0;
+  border: 0;                       /* remove heavy outer border */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  background: #f7f7f8;
+  overflow: hidden;
+  min-height: 360px;               /* ensures figure has height */
+}
+
+/* reverse (zigzag) */
+.about-card.reverse{
+  grid-template-columns: 70% 30%;
+}
+
+/* left text card */
+.text-side{
+  background:#fff;
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* optional leaf watermark (kept subtle) */
+.text-side.leaf-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background: center/80% no-repeat url("img/bg_autumn_soft_tile_1200x800.png");
+  opacity:.12; pointer-events:none;
+}
+
+/* right image card */
+.image-side{
+  position: relative;
+  overflow: hidden;
+}
+
+/* make the image truly fill the 70% area */
+.image-side img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit: cover;               /* key: cover the area */
+}
+
+/* readable caption at the bottom-left */
+.image-side figcaption{
+  position:absolute;
+  left:1rem; bottom:1rem;
+  max-width: min(90%, 40rem);
+  font-size: .95rem;
+  line-height:1.35;
+  color:#fff;
+  background: rgba(0,0,0,.45);
+  padding:.4rem .7rem;
+  border-radius:.5rem;
+  backdrop-filter: blur(3px);
+}
+
+/* headings inside cards */
+#about-us h2{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:1.25rem;
+}
+.about-card h3{
+  margin:0 0 .75rem;
+  font-size:1.5rem;
+}
+
+/* mobile: stack, image first on reversed card */
+@media (max-width: 900px){
+  .about-card,
+  .about-card.reverse{
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .about-card .image-side,
+  .about-card .text-side{
+    min-height: 260px;
+  }
+  .about-card .text-side{ min-height: auto; }
+}

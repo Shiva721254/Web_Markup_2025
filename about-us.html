@@ -1,27 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn about the Beatrixpark project: our purpose, values, and commitment to making Almere’s green spaces accessible for expat families." />
-  <meta name="keywords" content="About Beatrixpark, Almere project, expat families" />
+  <meta name="description" content="Explore Almere’s Beatrixpark: easy family routes, seasonal nature tips, and amenities for Asian expat families." />
+  <meta name="keywords" content="Beatrixpark Almere, expat families, routes, playgrounds, amenities" />
   <meta name="author" content="Shiva Lamichhane" />
-
-  <title>Beatrixpark | About Us</title>
-
-  <link rel="icon" href="img/logo-beatrixpark-icon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-beatrixpark- icon.png"type="image/x-icon" />
+  <title>Koningin Beatrixpark | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<a class="skip-link" href="#content">Skip to content</a>
-<input type="checkbox" id="cookie-consent" class="visually-hidden" aria-hidden="true" />
-<header>
-  <h1>Koningin Beatrixpark</h1>
-  <nav aria-label="Primary">
+
+
+  <nav aria-label="Primary" class="site-nav">
+      <a href="index.html" class="logo-link">
+    <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo" >
+  </a>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" >Home</a></li>
       <li><a href="nature.html">Nature</a></li>
       <li><a href="visit.html">Visit (Routes)</a></li>
       <li><a href="playgrounds-amenities.html">Playgrounds &amp; Amenities</a></li>
@@ -32,26 +30,79 @@
 </header>
 
 <main id="content">
-  <article aria-labelledby="about">
-    <h2 id="about">Who we are &amp; why this site exists</h2>
+    <section id="about-us" role="region" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
+        <figure class="wide-figure">
+            <img src="img/bp_aboutus.png" alt="Children’s playground with swings and benches in Beatrix Park"title="Beatrixpark morning view" />
+            <figcaption>“Berries in the park.”</figcaption>
+        </figure>
+    </section>
 
-    <p class="lead">This is a small student website designed to help Asian expat families—especially newcomers from Nepal and India—feel confident exploring Almere’s Beatrixpark. The project began with simple questions: Where do we go with kids after school? Which routes are safe to practise cycling or skating? Are there benches, tables and bins nearby? Our pages turn those questions into routes, tips and friendly guidance.</p>
+    <section id="about-us" role="region" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Us</h2>
 
-    <p>We keep the site technical-jargon free and follow good web-markup practice: semantic structure, accessible labels, clear link states and mobile-first CSS. If you have a favourite loop, a useful tip or a nice photo, please share it via the contact page. Together we can encourage neighbours to spend time outdoors, live actively and care for local nature. <strong>Legal note:</strong> Icons and trademarks belong to their owners (&copy;, &reg;, &trade;). This site is non-commercial and free (&euro;0); in the UK that’s &pound;0. Quotes appear as &quot;double quotes&quot; where needed, and ampersands use &amp;.</p>
+     <!-- Card 1 -->
+      <article class="about-card" aria-labelledby="about-story">
+        <section class="text-side leaf-bg">
+          <h3 id="about-story">Our Story</h3>
+          <p>
+            Beatrix Park is one of the city’s most beloved green spaces — a place where nature, relaxation, and community come together. 
+            Established to offer residents and visitors a peaceful retreat, the park features shady trees, flowering gardens, and calm walking paths. 
+            Over time, it has grown into a vibrant meeting point for families, joggers, and nature lovers of all ages.
+          </p>
+        </section>
 
-    <p>We aim for clean code that passes validators without errors or warnings. The CSS uses relative units, spacing controls and a consistent type scale. Layout uses Grid and Flexbox; the table is zebra-striped with `:nth-child`; and the cookie message appears above all content thanks to `z-index: 9999`. You can view the design screenshots later in the <em>/design</em> folder as <em>mobile.png</em> and <em>pc.png</em> exported from your Web Design prototype.</p>
+        <figure class="image-side">
+          <img src="img/bp_lawn.png" alt="People relaxing near the pond at Beatrix Park">
+          <figcaption>Beatrix Park — a calm and vibrant space for all seasons.</figcaption>
+        </figure>
+      </article>
 
-    <p class="cta-wrap"><a class="btn" href="contact.html">Share an idea</a></p>
-  </article>
+      <!-- Card 2 (reversed layout) -->
+      <article class="about-card reverse"aria-labelledby="about-mission">
+          <figure class="image-side">
+            <img src="img/bp_nature_resources.png" alt="Volunteers maintaining flowerbeds in the park">
+            <figcaption>Areal view, north part of Beatrix Park.</figcaption>
+          </figure>
+
+            <section class="text-side leaf-bg">
+              <h3 id="about-mission">Our Mission</h3>
+              <p>
+                Our mission is to keep Beatrix Park clean, safe, and welcoming for everyone. 
+                We collaborate with volunteers, local gardeners, and the municipality to preserve its natural beauty and biodiversity. 
+                From sustainable planting to eco-friendly maintenance, every effort supports a greener city and a healthier future for all who enjoy this park.
+              </p>
+            </section>
+     </article>
+  </section>
+
+
+    <p class="cta-wrap"><a class="btn" href="contact.html">Share an idea</a>
+    </p>
 </main>
 
-<aside id="cookie-banner" role="region" aria-label="Cookie notice">
-  <p><strong>Cookies:</strong> Functional cookies improve your experience.
-    <label class="cookie-btn" for="cookie-consent">Accept</label></p>
-</aside>
+<footer role="contentinfo" class="site-footer">
+  <section class="footer-left">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo">
+    </a>
+  </section>
 
-<footer>
-  <p><small>&copy; 2025 Beatrixpark Project — All rights reserved&trade;.</small></p>
+  <section class="footer-right">
+    <p><small>&copy; 2025 Beatrixpark Project · Designed for expat families in Almere.</small></p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="playgrounds-amenities.html">Playgrounds & Amenities</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="tagline">🌿 Thank you for visiting Beatrixpark — every season brings a new reason to smile.</p>
+  </section>
 </footer>
+
 </body>
 </html>
