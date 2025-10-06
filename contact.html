@@ -1,25 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Beatrixpark project: get in touch with questions, ideas, or feedback about the park and community." />
-  <meta name="keywords" content="Contact Beatrixpark, Almere park contact, expat families support" />
+  <meta name="description" content="Explore Almere’s Beatrixpark: easy family routes, seasonal nature tips, and amenities for Asian expat families." />
+  <meta name="keywords" content="Beatrixpark Almere, expat families, routes, playgrounds, amenities" />
   <meta name="author" content="Shiva Lamichhane" />
-
-  <title>Beatrixpark | Contact</title>
-
-  <link rel="icon" href="img/logo-beatrixpark-icon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo-beatrixpark- icon.png"type="image/x-icon" />
+  <title>Koningin Beatrixpark | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<a class="skip-link" href="#content">Skip to content</a>
-<input type="checkbox" id="cookie-consent" class="visually-hidden" aria-hidden="true" />
-<header>
-  <h1>Koningin Beatrixpark</h1>
-  <nav aria-label="Primary">
+
+
+  <nav aria-label="Primary" class="site-nav">
+      <a href="index.html" class="logo-link">
+    <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo" >
+  </a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="nature.html">Nature</a></li>
@@ -35,32 +33,32 @@
   <section aria-labelledby="contact">
     <h2 id="contact">Send a message</h2>
 
-    <p class="lead">Tell us what you need: a stroller-friendly loop, a quiet picnic corner, skating tips for beginners, or a place to practise cycling. We will reply with simple pointers. Clear questions help us help you quickly—include the time of day you plan to visit and the age of your children so we can suggest suitable paths and playgrounds.</p>
+<section id="contact-feedback" role="region" aria-labelledby="contact-heading"> <h2 id="contact-heading">Contact & Feedback</h2> <p class="lead"> We’d love to hear from you! Beatrix Park gets better with your ideas, stories, and smiles. Tell us what made your visit special, what we could improve, or any bright suggestions for play areas, paths, events, or accessibility. Spotted wildlife? Found a cozy bench? Had a great family moment? Share it! Questions and collaboration ideas are warmly welcome too. Use the form below (or email <a href="mailto:info@beatrixpark.example" rel="noopener">info@beatrixpark.example</a>) and we’ll get back to you with a cheerful hello. Thanks for helping us keep the park welcoming, green, and full of good energy! </p> </section>
 
-    <form action="https://coolinhollanddemo.azurewebsites.net/" method="POST">
-      <fieldset>
-        <legend>Contact form</legend>
+<section id="contact" role="region" aria-labelledby="contact-heading" class="contact-grid">
+  <h2 id="contact-heading">Contact form</h2>
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required />
+  <!-- Left: form -->
+  <form action="https://coolinhollanddemo.azurewebsites.net/" method="POST" class="contact-form">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
 
-        <label for="topic">Topic</label>
-        <select id="topic" name="topic">
-          <option value="routes">Routes</option>
-          <option value="playgrounds">Playgrounds</option>
-          <option value="meetups">Meet-ups</option>
-          <option value="other">Other</option>
-        </select>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" placeholder="How can we help?" required></textarea>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" cols="50" placeholder="How can we help?"></textarea>
+    <input type="submit" value="Send" class="btn-primary">
+  </form>
 
-        <input type="submit" value="Send" />
-      </fieldset>
-    </form>
+  <!-- Right: picture -->
+  <figure class="contact-figure">
+    <img src="img/feedback.png" alt="guy ready to receive feedback" title="Contact us" />
+    <figcaption class="visually-hidden">Decorative image</figcaption>
+  </figure>
+</section>
+
 
     <aside aria-labelledby="privacy">
       <h3 id="privacy">Privacy note</h3>
@@ -69,13 +67,27 @@
   </section>
 </main>
 
-<aside id="cookie-banner" role="region" aria-label="Cookie notice">
-  <p><strong>Cookies:</strong> Functional cookies improve your experience.
-    <label class="cookie-btn" for="cookie-consent">Accept</label></p>
-</aside>
+<footer role="contentinfo" class="site-footer">
+  <section class="footer-left">
+    <a href="index.html" class="footer-logo">
+      <img src="img/logo-beatrixpark- icon.png" alt="Beatrixpark logo" class="logo">
+    </a>
+  </section>
 
-<footer>
-  <p><small>&copy; 2025 Beatrixpark Project — All rights reserved&trade;.</small></p>
+  <section class="footer-right">
+    <p><small>&copy; 2025 Beatrixpark Project · Designed for expat families in Almere.</small></p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nature.html">Nature</a></li>
+        <li><a href="visit.html">Visit</a></li>
+        <li><a href="playgrounds-amenities.html">Playgrounds & Amenities</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="tagline">🌿 Thank you for visiting Beatrixpark — every season brings a new reason to smile.</p>
+  </section>
 </footer>
 </body>
 </html>
