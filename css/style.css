@@ -30,6 +30,11 @@ body{
 .indent{
   text-indent: 1.5rem;
 }
+
+.uppercase{
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
 .word-spacing{
   word-spacing: 5px;
 }
