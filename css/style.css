@@ -264,6 +264,45 @@ nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
   margin-bottom: 0.75rem;
 }
 
+/* Cookie banner without using <div> */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#333;
+  color:#fff;
+  padding:.6rem 1rem;
+  font-size:.9rem;
+  text-align:center;
+  z-index:9999;        /* required by rubric */
+}
+
+
+/* Float helper for an image or small box */
+.float-right{
+  float:right;
+  max-width:40%;
+  margin:0 0 1rem 1rem;  /* space to left and bottom */
+}
+
+
+.cookie-banner button{
+  margin-left:.75rem;
+  padding:.3rem .7rem;
+  border-radius:.3rem;
+  border:0;
+  background:var(--accent);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.cookie-banner button:hover{
+  background:#ffca45;
+}
+
+
 /* List styling */
 .two-cards ul {
   margin-left: 1.25rem;
@@ -312,6 +351,10 @@ nav a[aria-current="page"]:hover{background:var(--primary); color:#fff}
 .two-cards a:hover {
   text-decoration: underline;
 }
+a:visited{
+  color:#c1b1a7;
+}
+
 
 /* Responsive layout */
 @media (max-width: 700px) {
