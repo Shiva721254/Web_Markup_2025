@@ -14,7 +14,7 @@
   --muted:#555566;        /* Slate Gray */
   --accent:#FFB300;       /* Amber */
   --radius:10px;
-  --shadow:0 4px 12px rgba(0,0,0,.08);
+  --shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Reset & base */
@@ -421,7 +421,7 @@ a:visited{
   padding: 2em;
   border-radius: 20px;
   background: #f8faf6;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   position: relative;
 }
 
@@ -463,7 +463,7 @@ a:visited{
   bottom: 10%;
   left: 50%;
   width: 1.5px;
-  background: rgba(0,0,0,.1);
+  background: rgba(0,0,0,0.1);
 }
 
 /* Responsive: stack columns */
